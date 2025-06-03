@@ -28,11 +28,11 @@ export const App: React.FC = () => {
   const [isFocus, setIsFocus] = useState(false);
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
 
-  const applyOuery = useCallback(debounce(setAppliedQuery, delay), []);
+  const applyQuery = useCallback(debounce(setAppliedQuery, delay), []);
 
   const handleQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value.trimStart());
-    applyOuery(event.target.value.trimStart());
+    applyQuery(event.target.value.trimStart());
     setSelectedPerson(null);
   };
 
